@@ -1,0 +1,11 @@
+{% extends "base.html.j2" %}
+{% block titre %}Accueil{% endblock %}
+{% block contenu %}
+<h1 class="text-center">Bienvenue dans la Bibliothèque</h1>
+<p class="text-center lead">Gérez vos utilisateurs, livres et auteurs. Connectez-vous pour effectuer des modifications.</p>
+<div class="text-center mt-4">
+    <a class="btn btn-primary mx-2" href="{{ url_for('utilisateurs') }}">Utilisateurs</a>
+    <a class="btn btn-success mx-2" href="{{ url_for('livres') }}">Livres</a>
+    <a class="btn btn-info mx-2" href="{{ url_for('auteurs') }}">Auteurs</a>
+</div>
+{% endblock %}

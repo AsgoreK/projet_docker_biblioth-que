@@ -1,0 +1,23 @@
+name: pytest 
+services:
+  api:
+    image: app:test
+    ports: 
+      - "5006:5006"
+    environment:
+      - SECRET_KEY=votre_clé_secrète
+
+  api-front:
+    image: app:front
+    ports: 
+      - "5001:5001"
+    environment:
+      - API_URL=http://api:5006
+      - AUTH_URL=http://auth:5007
+  
+  api-auth:
+    image: app:auth
+    ports:
+      - "5005:5005"
+    environment:
+      - SECRET_KEY=votre_clé_secrète

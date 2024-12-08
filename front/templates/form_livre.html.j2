@@ -1,0 +1,26 @@
+{% extends "base.html.j2" %}
+{% block titre %}Ajouter un livre{% endblock %}
+{% block contenu %}
+<h1>Ajouter un livre</h1>
+<form action="{{ url_for('ajouter_livre') }}" method="POST" class="row g-3">
+    <div class="col-md-6">
+        <label for="titre" class="form-label">Titre</label>
+        <input type="text" class="form-control" id="titre" name="titre" required>
+    </div>
+    <div class="col-md-6">
+        <label for="pitch" class="form-label">Pitch</label>
+        <input type="text" class="form-control" id="pitch" name="pitch" required>
+    </div>
+    <div class="col-md-6">
+        <label for="date_public" class="form-label">Date de publication</label>
+        <input type="date" class="form-control" id="date_public" name="date_public" required>
+    </div>
+    <div class="col-md-6">
+        <label for="auteur_id" class="form-label">ID de l'auteur</label>
+        <input type="number" class="form-control" id="auteur_id" name="auteur_id" required>
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+    </div>
+</form>
+{% endblock %}
